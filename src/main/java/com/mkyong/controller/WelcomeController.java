@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Arrays;
@@ -25,14 +26,7 @@ public class WelcomeController {
 
     @GetMapping("/")
     public String main(Model model) {
-        model.addAttribute("message", message);
-        model.addAttribute("tasks", tasks);
-        String s = processinHuman.processHuman();
-        System.out.println("s = " + s);
-        StringBuilder stringBuilder = new StringBuilder();
-        StringBuilder append = stringBuilder.append("123").append("\n").append("1222");
-        String s1 = append.toString();
-        return "welcome"; //view
+        return "index"; //view
     }
 
     // /hello?name=kotlin
@@ -42,8 +36,7 @@ public class WelcomeController {
             @RequestParam(name = "surname", required = false, defaultValue = "") String surname,
             Model model) {
 
-        model.addAttribute("message", name);
-        model.addAttribute("messagesur", surname);
+        model.addAttribute("message", name+surname);
 
         return "welcome"; //view
     }
