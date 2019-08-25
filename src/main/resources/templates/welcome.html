@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Тест ЕГЭ</title>
+
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async>
+    </script>
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+"HTML-CSS": { scale: 200, linebreaks: { automatic: false } },
+SVG: { linebreaks: { automatic:false } },
+displayAlign: "left" });
+
+
+</script>
+
+
+
+</head>
+
+<body>
+
+<p>
+    Найдите корень уравнения: \(2-5(x+7) = -4x+3\)
+</p>
+Ответ:
+<input size="10" type="text" name="answer_5_rat_5" class="test_inp" value="-36" id="answer1"
+       onchange="if ($(this).val().indexOf('.') !== -1) $(this).next().text('Предупреждаем, что для записи десятичных дробей используется запятая, а не точка.')0; else $(this).next().text('');">
+
+<p>
+    Решите уравнение \(x^2 + 10000 = 200x\). Если уравнение имеет более одного корня, в ответе запишите больший из
+    корней.
+</p>
+Ответ:
+<input size="10" type="text" name="answer_5_rat_1" class="test_inp" value="100" id="answer2"
+       onchange="if ($(this).val().indexOf('.') !== -1) $(this).next().text('Предупреждаем, что для записи десятичных дробей используется запятая, а не точка.')0; else $(this).next().text('');">
+
+<p>
+    Решите уравнение \(-(x+2)^2 = -2-x \). Если уравнение имеет более одного корня, в ответе запишите больший из корней.
+</p>
+Ответ:
+<input size="10" type="text" name="answer_5_rat_2" class="test_inp" value="-1" id="answer3"
+       onchange="if ($(this).val().indexOf('.') !== -1) $(this).next().text('Предупреждаем, что для записи десятичных дробей используется запятая, а не точка.')0; else $(this).next().text('');">
+
+<p>
+    <button id = "1">
+        Ответ
+    </button>
+</p>
+
+<main role="main" class="container">
+
+</main>
+<!— /.container —>
+
+<script type="text/javascript" th:src="@{webjars/bootstrap/4.2.1/js/bootstrap.min.js}"></script>
+</body>
+
+<script>
+
+$("#1").click(function(){
+alert('clicked');
+})
+</script>
+
+</html>
